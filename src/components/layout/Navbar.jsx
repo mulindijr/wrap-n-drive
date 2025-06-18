@@ -45,21 +45,20 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div 
-                    className={`mobile-menu md:hidden ${mobileMenuOpen ? 'open' : ''}`}
-                    style={{
-                        maxHeight: mobileMenuOpen ? '500px' : '0',
-                        transition: 'max-height 0.5s ease-out'
-                    }}
-                >
-                    <div className="flex flex-col space-y-3 px-4 py-3">
-                        <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="block py-2 hover:text-accent">Home</a>
-                        <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="block py-2 hover:text-accent">Services</a>
-                        <a href="#gallery" onClick={(e) => scrollToSection(e, '#gallery')} className="block py-2 hover:text-accent">Gallery</a>
-                        <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="block py-2 hover:text-accent">About</a>
-                        <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="block py-2 hover:text-accent">Contact</a>
-                    </div>
+                <div className="relative md:hidden">
+                    {mobileMenuOpen && (
+                        <div className="absolute top-full left-0 right-0 bg-gray-800 mt-4 rounded-lg shadow-md z-40 transition-all duration-300 ease-in-out">
+                          <div className="flex flex-col space-y-3 px-4 py-3">
+                            <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="block py-2 hover:text-accent">Home</a>
+                            <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="block py-2 hover:text-accent">Services</a>
+                            <a href="#gallery" onClick={(e) => scrollToSection(e, '#gallery')} className="block py-2 hover:text-accent">Gallery</a>
+                            <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="block py-2 hover:text-accent">About</a>
+                            <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="block py-2 hover:text-accent">Contact</a>
+                          </div>
+                        </div>
+                    )}
                 </div>
+
             </div>
         </nav>
     );
