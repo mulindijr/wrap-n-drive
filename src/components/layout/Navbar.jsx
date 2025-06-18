@@ -3,6 +3,7 @@ import { FaCar, FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
 
     const scrollToSection = (e, targetId) => {
         e.preventDefault();
@@ -12,6 +13,7 @@ const Navbar = () => {
                 top: targetElement.offsetTop - 80,
                 behavior: 'smooth'
             });
+            setActiveSection(targetId);
             setMobileMenuOpen(false);
         }
     };
@@ -28,11 +30,11 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex space-x-8">
-                        <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="nav-link py-4">Home</a>
-                        <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="nav-link py-4">Services</a>
-                        <a href="#gallery" onClick={(e) => scrollToSection(e, '#gallery')} className="nav-link py-4">Gallery</a>
-                        <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="nav-link py-4">About</a>
-                        <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="nav-link py-4">Contact</a>
+                        <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className={`text-lg font-semibold py-4 hover:text-yellow-500 ${activeSection === '#home' ? 'text-yellow-500' : ''}`}>Home</a>
+                        <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className={`text-lg font-semibold py-4 hover:text-yellow-500 ${activeSection === '#services' ? 'text-yellow-500' : ''}`}>Services</a>
+                        <a href="#gallery" onClick={(e) => scrollToSection(e, '#gallery')} className={`text-lg font-semibold py-4 hover:text-yellow-500 ${activeSection === '#gallery' ? 'text-yellow-500' : ''}`}>Gallery</a>
+                        <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className={`text-lg font-semibold py-4 hover:text-yellow-500 ${activeSection === '#about' ? 'text-yellow-500' : ''}`}>About</a>
+                        <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className={`text-lg font-semibold py-4 hover:text-yellow-500 ${activeSection === '#contact' ? 'text-yellow-500' : ''}`}>Contact</a>
                     </div>
 
                     <div className="md:hidden">
@@ -48,13 +50,13 @@ const Navbar = () => {
                 <div className="relative md:hidden">
                     {mobileMenuOpen && (
                         <div className="absolute top-full left-0 right-0 bg-gray-800 mt-4 rounded-lg shadow-md z-40 transition-all duration-300 ease-in-out">
-                          <div className="flex flex-col space-y-3 px-4 py-3">
-                            <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="block py-2 hover:text-accent">Home</a>
-                            <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="block py-2 hover:text-accent">Services</a>
-                            <a href="#gallery" onClick={(e) => scrollToSection(e, '#gallery')} className="block py-2 hover:text-accent">Gallery</a>
-                            <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className="block py-2 hover:text-accent">About</a>
-                            <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className="block py-2 hover:text-accent">Contact</a>
-                          </div>
+                            <div className="flex flex-col space-y-3 px-4 py-3">
+                                <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className={`block py-2 hover:text-accent ${activeSection === '#home' ? 'text-yellow-500' : ''}`}>Home</a>
+                                <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className={`block py-2 hover:text-accent ${activeSection === '#services' ? 'text-yellow-500' : ''}`}>Services</a>
+                                <a href="#gallery" onClick={(e) => scrollToSection(e, '#gallery')} className = {`block py-2 hover:text-accent ${activeSection === '#gallery' ? 'text-yellow-500' : ''}`}>Gallery</a>
+                                <a href="#about" onClick={(e) => scrollToSection(e, '#about')} className = {`block py-2 hover:text-accent ${activeSection === '#about' ? 'text-yellow-500' : ''}`}>About</a>
+                                <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className = {`block py-2 hover:text-accent ${activeSection === '#contact' ? 'text-yellow-500' : ''}`}>Contact</a>
+                            </div>
                         </div>
                     )}
                 </div>
