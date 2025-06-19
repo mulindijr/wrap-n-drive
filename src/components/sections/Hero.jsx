@@ -17,13 +17,13 @@ const Hero = () => {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <a 
                         href="#contact" 
-                        className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
+                        className="bg-[#e94560] hover:bg-red-500 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
                     >
                         Get a Quote
                     </a>
                     <a 
                         href="#services" 
-                        className="bg-transparent text-white hover:text-yellow-600 border-2 border-white hover:border-yellow-600 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
+                        className="bg-transparent text-white hover:text-gray-900 border-2 border-white hover:bg-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
                     >
                         Our Services
                     </a>
