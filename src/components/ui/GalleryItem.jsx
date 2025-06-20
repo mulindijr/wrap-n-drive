@@ -1,6 +1,6 @@
 const GalleryItem = ({ item }) => {
     return (
-        <div className="gallery-item rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+        <div className="rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
             <img 
               src={item.image} 
               alt={item.title} 
